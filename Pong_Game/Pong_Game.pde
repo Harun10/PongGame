@@ -121,10 +121,10 @@ void draw() {
 
   // Right paddle
   if (paddleRightUp == true ) {
-    paddleMoveYRight -= 4;
+    paddleMoveYRight -= 2;
   }
   if (paddleRightDown == true) {
-    paddleMoveYRight += 4;
+    paddleMoveYRight += 2;
   }
   if (paddleMoveYRight <= 0 ) {
     paddleMoveYRight = 0;
@@ -135,10 +135,10 @@ void draw() {
 
   //Left paddle
   if (paddleLeftUp == true ) {
-    paddleMoveYLeft -= 4;
+    paddleMoveYLeft -= 2;
   }
   if (paddleLeftDown == true) {
-    paddleMoveYLeft += 4;
+    paddleMoveYLeft += 2;
   }
   if (paddleMoveYLeft <= 0 ) {
     paddleMoveYLeft = 0;
@@ -212,18 +212,16 @@ void keyPressed () {
   }
 }
 
-void mouseClicked() {
+void mouseClicked() {{
   clickToStart += 1;
-  if ((mouseX > width*0.9/1 && mouseX<width*1/3 && mouseY < height*0/1) && mouseY > height*1/10) {
+  if ((mouseX > width*14.4/16 && mouseX<width*displayWidth*15.9/16 && mouseY < height*1/10) && mouseY > height*0/1) {
     exit();
   }
+  rect(displayWidth*0.001/1, displayHeight*0/1, displayWidth*1/10, displayHeight*1/10);
+}
 
-  
-  if ((mouseX > width*8.34/16 && mouseX<width*9.4/16 && mouseY < height*2/16) && mouseY > height*0.4/16) {
-    exit();
-  }
 
-  if ((mouseX > width*5.95/16 && mouseX<width*7/16 && mouseY < height*2/16) && mouseY > height*0.4/16) {
+  if ((mouseX > width*5.1/16 && mouseX<width*10.44/16 && mouseY < height*1.2/10) && mouseY > height*0/1) {
     if (lightModeOn == false) {
       lightModeOn = true;
     } else {
@@ -234,6 +232,11 @@ void mouseClicked() {
     loop();
     clickToStart +=1;
   }
-  
+  if ((mouseX > width*0/16 && mouseX<width*1.6/16 && mouseY < height*1.2/10) && mouseY > height*0/1) {
+    player1score = 0;
+    player2score = 0;
+    
+  }
+      rect(displayWidth*1/3.1, displayHeight*1/1.5, displayWidth*1/3, displayHeight*1/9);  
   
 }
