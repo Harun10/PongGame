@@ -55,7 +55,7 @@ void setup() {
   //Create a ball
   ellipse(ballStartPositionX, ballStartPositionY, ballSize, ballSize);
   noLoop();
-  Buttons();
+  
 }
 void draw() {
 
@@ -190,6 +190,7 @@ void draw() {
     fill(#00FF97); //Dark mode
   }
   ellipse(ballMoveX, ballMoveY, ballSize, ballSize);
+  Buttons();
 }
 
 void keyPressed () {
@@ -213,6 +214,11 @@ void keyPressed () {
 
 void mouseClicked() {
   clickToStart += 1;
+  if ((mouseX > width*0.9/1 && mouseX<width*1/3 && mouseY < height*0/1) && mouseY > height*1/10) {
+    exit();
+  }
+
+  
   if ((mouseX > width*8.34/16 && mouseX<width*9.4/16 && mouseY < height*2/16) && mouseY > height*0.4/16) {
     exit();
   }
@@ -228,4 +234,6 @@ void mouseClicked() {
     loop();
     clickToStart +=1;
   }
+  
+  
 }
